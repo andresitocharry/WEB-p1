@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "./componentes/Home.js"; // Importa Home correctamente
+import "bootstrap/dist/css/bootstrap.min.css"; // Importamos Bootstrap
+
+import Login2 from "./componentes/Login2.js"; // Importa Login2 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Página de Login (cuando el usuario entra a "/") */}
+        <Route path="/" element={<Login2 />} />
+        <Route path="/home" element={<Home />} /> {/* Home se muestra en /home */}
+      </Routes>
+    </Router>
   );
 }
 
